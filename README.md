@@ -68,7 +68,7 @@
 
 ## addressテーブル
 | Column        | Type      | Options                        |
-| ------------- | --------- | -------------------------------|
+| ------------- | --------- | ------------------------------ |
 | postal _code  | string    | null: false                    |
 | prefecture    | integer   | null: false                    |
 | city          | string    | null: false                    |

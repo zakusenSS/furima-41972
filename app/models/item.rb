@@ -10,12 +10,15 @@ class Item < ApplicationRecord
 
   # ActiveHashのアソシエーション
   belongs_to :category
-  belongs_to :status_id
-  belongs_to :shipping_fee_id
-  belongs_to :prefecture_id
-  belongs_to :delivery_time_id
-
-
+  belongs_to :status
+  belongs_to :shipping_fee
+  belongs_to :prefecture
+  belongs_to :delivery_time
+  
+  # バリデーション
+  with_options presence: true do
+    validates :user_id
+    validates :
 
 
 end

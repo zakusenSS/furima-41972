@@ -14,11 +14,28 @@ class Item < ApplicationRecord
   belongs_to :shipping_fee
   belongs_to :prefecture
   belongs_to :delivery_time
-  
-  # バリデーション
+
+  # バリデーション(空の投稿を保存できないようにする)
   with_options presence: true do
+    validates :image
     validates :user_id
-    validates :
+    validates :name
+    validates :description
+    validates :category_id
+    validates :status_id
+    validates :shipping_fee_id
+    validates :prefecture_id
+    validates :delivery_time_id
+    # 価格は、￥300～￥9,999,999の間のみ保存可能。また、半角英数値のみ保存可能。
+    validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  end
 
-
+   #ジャンルの選択が「---」の時は保存できないようにする
+  with_options numericality: { other_than: 0 , message: "can't be blank" } do
+    validates :category_id
+    validates :status_id
+    validates :shipping_fee_id
+    validates :prefecture_id
+    validates :delivery_time_id
+  end
 end

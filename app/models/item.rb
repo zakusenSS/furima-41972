@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one    :purchases
 
-  # ActiveSStorageのアソシエーション
+  # ActiveStorageのアソシエーション
   has_one_attached :image
 
   # ActiveHashのアソシエーション
@@ -18,7 +18,7 @@ class Item < ApplicationRecord
   # バリデーション(空の投稿を保存できないようにする)
   with_options presence: true do
     validates :image
-    validates :user_id
+    validates :user
     validates :name
     validates :description
     validates :category_id

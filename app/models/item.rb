@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   # 商品テーブルのアソシエーション
   belongs_to :user
-  has_one    :purchases
+  # has_one    :purchases
 
   # ActiveStorageのアソシエーション
   has_one_attached :image
@@ -18,7 +18,6 @@ class Item < ApplicationRecord
   # バリデーション(空の投稿を保存できないようにする)
   with_options presence: true do
     validates :image
-    validates :user
     validates :name
     validates :description
     validates :category_id
@@ -28,6 +27,7 @@ class Item < ApplicationRecord
     validates :delivery_time_id
     # 価格は、￥300～￥9,999,999の間のみ保存可能。また、半角英数値のみ保存可能。
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+    validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   end
 
    #ジャンルの選択が「---」の時は保存できないようにする

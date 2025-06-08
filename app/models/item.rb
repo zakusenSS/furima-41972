@@ -3,7 +3,7 @@ class Item < ApplicationRecord
 
   # 商品テーブルのアソシエーション
   belongs_to :user
-  # has_one    :purchases
+  has_one    :purchases
 
   # ActiveStorageのアソシエーション
   has_one_attached :image

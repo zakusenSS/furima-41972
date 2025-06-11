@@ -9,7 +9,7 @@ class PurchaseForm
     validates :prefecture_id, numericality: {other_than: 0, message: "can't be blank" }
     validates :city
     validates :address
-    validates :phone_number , format: { with: /\A[0-9]{10,11}\z/, message: 'must be 10 or 11 digits longs' }
+    validates :phone_number , format: { with: /\A[0-9]{10,11}\z/, message: 'is invalid' }
   end
 
   def save

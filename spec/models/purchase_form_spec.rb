@@ -9,7 +9,7 @@ RSpec.describe PurchaseForm, type: :model do
 
   describe '配送先情報の保存' do
     context '配送先情報の保存ができるとき' do
-      it 'すべての値が正しく入力されていれば保存できること' do
+      it 'priceとtokenがあれば保存できること' do
         expect(@purchase_form).to be_valid
       end
        it 'user_idが空でなければ保存できる' do
@@ -56,6 +56,11 @@ RSpec.describe PurchaseForm, type: :model do
         @purchase_form.item_id = nil
         @purchase_form.valid?
         expect(@purchase_form.errors.full_messages).to include("Item can't be blank")
+      end
+      it 'トークンが空だと保存できないこと' do
+        @purchase_form.token = nil
+        @purchase_form.valid?
+        expect(@purchase_form.errors.full_messages).to include("Token can't be blank")
       end
       it '郵便番号が空だと保存できないこと' do
         @purchase_form.postal_code = nil

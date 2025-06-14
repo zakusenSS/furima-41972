@@ -102,6 +102,11 @@ RSpec.describe PurchaseForm, type: :model do
         @purchase_form.valid?
         expect(@purchase_form.errors.full_messages).to include("Phone number is invalid")
       end
+      it '電話番号が9桁以下では保存できないこと' do
+        @purchase_form.phone_number = '12345678'
+        @purchase_form.valid?
+        expect(@purchase_form.errors.full_messages).to include("Phone number is invalid")
+      end
     end
   end
 end

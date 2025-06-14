@@ -8,10 +8,6 @@ class PurchasesController < ApplicationController
     redirect_to root_path unless current_user.id != @item.user.id && @item.purchase.nil?
   end
 
-  def new
-    @purchase_from = PurchaseForm.new
-  end
-
   def create
     @purchase_form = PurchaseForm.new(purchase_params)
     if @purchase_form.valid?

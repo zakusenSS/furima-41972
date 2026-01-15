@@ -1,0 +1,119 @@
+have_func: checking for rb_absint_size()... -------------------- yes
+
+PATH=".;c:/Ruby32-x64/lib;c:\Ruby32-x64\bin;c:\Ruby32-x64\msys64\ucrt64\bin;c:\Ruby32-x64\msys64\usr\bin;C:\Program Files\PowerShell\7;C:\Ruby32-x64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Connector C 6.1\lib;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\HP\LCDDisplayHelper\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Docker\Docker\resources\bin;C:\Ruby30-x64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Ruby32-x64\bin;C:\Users\zhime\AppData\Local\Microsoft\WindowsApps;C:\Users\zhime\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zhime\AppData\Local\GitHubDesktop\bin;C:\Users\zhime\.git-secrets;C:\src\flutter\bin" "gcc -o conftest.exe -Ic:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -Ic:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -Ic:/Ruby32-x64/include/ruby-3.2.0 -I.  -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -Lc:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <winsock2.h>
+4: #include <windows.h>
+5: int main(int argc, char **argv)
+6: {
+7:   return !!argv[argc];
+8: }
+/* end */
+
+PATH=".;c:/Ruby32-x64/lib;c:\Ruby32-x64\bin;c:\Ruby32-x64\msys64\ucrt64\bin;c:\Ruby32-x64\msys64\usr\bin;C:\Program Files\PowerShell\7;C:\Ruby32-x64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Connector C 6.1\lib;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\HP\LCDDisplayHelper\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Docker\Docker\resources\bin;C:\Ruby30-x64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Ruby32-x64\bin;C:\Users\zhime\AppData\Local\Microsoft\WindowsApps;C:\Users\zhime\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zhime\AppData\Local\GitHubDesktop\bin;C:\Users\zhime\.git-secrets;C:\src\flutter\bin" "gcc -o conftest.exe -Ic:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -Ic:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -Ic:/Ruby32-x64/include/ruby-3.2.0 -I.  -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -Lc:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_absint_size; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_absint_singlebit_p()... -------------------- yes
+
+PATH=".;c:/Ruby32-x64/lib;c:\Ruby32-x64\bin;c:\Ruby32-x64\msys64\ucrt64\bin;c:\Ruby32-x64\msys64\usr\bin;C:\Program Files\PowerShell\7;C:\Ruby32-x64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Connector C 6.1\lib;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\HP\LCDDisplayHelper\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Docker\Docker\resources\bin;C:\Ruby30-x64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Ruby32-x64\bin;C:\Users\zhime\AppData\Local\Microsoft\WindowsApps;C:\Users\zhime\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zhime\AppData\Local\GitHubDesktop\bin;C:\Users\zhime\.git-secrets;C:\src\flutter\bin" "gcc -o conftest.exe -Ic:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -Ic:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -Ic:/Ruby32-x64/include/ruby-3.2.0 -I.  -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -Lc:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_absint_singlebit_p; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_wait_for_single_fd()... -------------------- yes
+
+PATH=".;c:/Ruby32-x64/lib;c:\Ruby32-x64\bin;c:\Ruby32-x64\msys64\ucrt64\bin;c:\Ruby32-x64\msys64\usr\bin;C:\Program Files\PowerShell\7;C:\Ruby32-x64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Connector C 6.1\lib;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\HP\LCDDisplayHelper\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Docker\Docker\resources\bin;C:\Ruby30-x64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Ruby32-x64\bin;C:\Users\zhime\AppData\Local\Microsoft\WindowsApps;C:\Users\zhime\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zhime\AppData\Local\GitHubDesktop\bin;C:\Users\zhime\.git-secrets;C:\src\flutter\bin" "gcc -o conftest.exe -Ic:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -Ic:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -Ic:/Ruby32-x64/include/ruby-3.2.0 -I.  -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -Lc:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+conftest.c: In function 't':
+conftest.c:17:57: error: 'rb_wait_for_single_fd' undeclared (first use in this function)
+   17 | int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return !p; }
+      |                                                         ^~~~~~~~~~~~~~~~~~~~~
+conftest.c:17:57: note: each undeclared identifier is reported only once for each function it appears in
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: int t(void) { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return !p; }
+/* end */
+
+PATH=".;c:/Ruby32-x64/lib;c:\Ruby32-x64\bin;c:\Ruby32-x64\msys64\ucrt64\bin;c:\Ruby32-x64\msys64\usr\bin;C:\Program Files\PowerShell\7;C:\Ruby32-x64\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Connector C 6.1\lib;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA app\NvDLISR;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\ProgramData\HP\LCDDisplayHelper\bin;C:\Program Files\PowerShell\7\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Docker\Docker\resources\bin;C:\Ruby30-x64\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Ruby32-x64\bin;C:\Users\zhime\AppData\Local\Microsoft\WindowsApps;C:\Users\zhime\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\zhime\AppData\Local\GitHubDesktop\bin;C:\Users\zhime\.git-secrets;C:\src\flutter\bin" "gcc -o conftest.exe -Ic:/Ruby32-x64/include/ruby-3.2.0/x64-mingw-ucrt -Ic:/Ruby32-x64/include/ruby-3.2.0/ruby/backward -Ic:/Ruby32-x64/include/ruby-3.2.0 -I.  -DFD_SETSIZE=2048 -D_WIN32_WINNT=0x0600 -D__MINGW_USE_VC2005_COMPAT -D_FILE_OFFSET_BITS=64  -O3 -fno-fast-math -fstack-protector-strong conftest.c  -L. -Lc:/Ruby32-x64/lib -L. -pipe -s -fstack-protector-strong -Wl,--no-as-needed  -m64   -lx64-ucrt-ruby320  -lshell32 -lws2_32 -liphlpapi -limagehlp -lshlwapi -lbcrypt  "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <winsock2.h>
+ 4: #include <windows.h>
+ 5: 
+ 6: /*top*/
+ 7: extern int t(void);
+ 8: int main(int argc, char **argv)
+ 9: {
+10:   if (argc > 1000000) {
+11:     int (* volatile tp)(void)=(int (*)(void))&t;
+12:     printf("%d", (*tp)());
+13:   }
+14: 
+15:   return !!argv[argc];
+16: }
+17: extern void rb_wait_for_single_fd();
+18: int t(void) { rb_wait_for_single_fd(); return 0; }
+/* end */
+
+--------------------
+

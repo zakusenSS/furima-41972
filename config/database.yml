@@ -4,7 +4,7 @@ windows_mysql_path: &windows_mysql_path
 
 default: &default
   adapter: mysql2
-  encoding: utf8mb4
+  encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password: ''
